@@ -2,8 +2,9 @@
 
 const path = require('path');
 const fs = require('fs-extra');
-const exec = require('child_process').exec;
+const {exec} = require('child_process');
 const process = require('process');
+const {spawn} = require('child_process');
 
 function handleError(error) {
   if (!error) return false;
@@ -35,14 +36,14 @@ module.exports = (projectName) => {
     console.log('\n clear dir');
 
     const fn = function () {
-      console.log(`\n cd ${projectName} && pnpm install`);
+      console.log(`\n pnpm install`);
 
-      exec(`cd ${projectName} && pnpm install`, (error) => {
-        handleError(error);
-
-        console.log('\n pnpm install completed');
-
-        process.exit();
+      const install = spawn(process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm', ['install'], {
+        cwd: projecPath,
+        env: process.env
+      });
+      install.stdout.on('data', (data) => {
+        console.log(data.toString());
       });
     };
 
