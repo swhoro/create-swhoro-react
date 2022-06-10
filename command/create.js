@@ -2,7 +2,6 @@
 
 const path = require('path');
 const fs = require('fs-extra');
-const process = require('process');
 const {spawn} = require('child_process');
 
 function handleError(error) {

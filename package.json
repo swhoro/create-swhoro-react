@@ -1,6 +1,6 @@
 {
   "name": "create-swhoro-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "bin": {
     "create-swhoro-react": "bin/init.js"
@@ -9,7 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "commander": "^9.3.0",
     "fs-extra": "^10.1.0"
   }
 }

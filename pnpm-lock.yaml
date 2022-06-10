@@ -1,19 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  commander: ^9.3.0
   fs-extra: ^10.1.0
 
 dependencies:
-  commander: 9.3.0
   fs-extra: 10.1.0
 
 packages:
-
-  /commander/9.3.0:
-    resolution: {integrity: sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==}
-    engines: {node: ^12.20.0 || >=14}
-    dev: false
 
   /fs-extra/10.1.0:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
