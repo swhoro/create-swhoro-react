@@ -1,6 +1,6 @@
 {
   "name": "create-swhoro-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "bin": {
     "create-swhoro-react": "bin/init.js"
