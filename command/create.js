@@ -2,7 +2,6 @@
 
 const path = require('path');
 const fs = require('fs-extra');
-const {exec} = require('child_process');
 const process = require('process');
 const {spawn} = require('child_process');
 
@@ -15,11 +14,11 @@ function handleError(error) {
 function copyTemplate(projectPath, callback) {
   const templatePath = path.resolve(__dirname, '../template');
 
-  console.log('\n start copy');
+  console.log('\nstart copy');
 
   fs.copy(templatePath, projectPath, function (error) {
     handleError(error);
-    console.log('\n copy completed');
+    console.log('\ncopy completed');
     callback();
   });
 }
@@ -27,16 +26,14 @@ function copyTemplate(projectPath, callback) {
 module.exports = (projectName) => {
 
   const projecPath = path.resolve(process.cwd(), projectName);
-  console.log(process.cwd());
-  console.log(__dirname);
 
   fs.emptyDir(projecPath, function (error) {
     handleError(error);
 
-    console.log('\n clear dir');
+    console.log('\nclear dir');
 
     const fn = function () {
-      console.log(`\n pnpm install`);
+      console.log(`\npnpm install\n`);
 
       const install = spawn(process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm', ['install'], {
         cwd: projecPath,
@@ -49,5 +46,4 @@ module.exports = (projectName) => {
 
     copyTemplate(projecPath, fn);
   });
-
 };

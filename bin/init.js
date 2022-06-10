@@ -4,19 +4,6 @@
 
 process.env.NODE_PATH = __dirname + '/../node_modules';
 
-const program = require('commander');
-
-program.version(require('../package').version).usage('<command>');
-
-program
-  .command('create <projectName>')
-  .description('creeate a new project')
-  .action((projectName) => {
-    require('../command/create')(projectName);
-  });
-
-program.parse();
-
-if (!program.args.length) {
-  program.help();
-}
+const projectName = process.argv[2];
+const create = require('../command/create');
+create(projectName);
