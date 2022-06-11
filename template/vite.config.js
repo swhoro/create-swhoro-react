@@ -14,8 +14,8 @@ export default defineConfig(({_, mode}) => {
         }
       },
       // 静态资源开发目录
-      publicDir: '/publi/assets',
       build: {
+        publicDir: 'public/assets',
         outDir: './dist',
         // 静态资源输出目录
         assetsDir: './assets'
@@ -42,7 +42,7 @@ export default defineConfig(({_, mode}) => {
         }
       },
       // 静态资源开发目录
-      publicDir: '/publi/assets',
+      publicDir: 'public/assets',
       server: {
         open: true,
         hmr: true
